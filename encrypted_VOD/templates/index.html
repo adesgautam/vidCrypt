@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Video Streaming Demonstration</title>
+  </head>
+  <body>
+  	<div style="text-align: center;">
+	    <h1>Video Streaming Demonstration</h1>
+	    <!-- <img src="{{ url_for('video_feed') }}"> -->
+	    <video width="600" height="400" controls autoplay>
+		  <source src="{{ url_for('video_feed') }}" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+	</div>
+  </body>
+</html>
