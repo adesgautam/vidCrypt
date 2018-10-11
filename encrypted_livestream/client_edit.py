@@ -16,7 +16,8 @@ cap = cv2.VideoCapture(0)
 # clientsocket.connect(('localhost',8089))
 
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-host = socket.gethostbyname("localhost")
+# host = socket.gethostbyname("localhost")
+host = "192.168.43.28"
 port = 9002
 
 serversocket.bind((host, port))
