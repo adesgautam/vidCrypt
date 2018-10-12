@@ -48,13 +48,13 @@ class Streamer (threading.Thread):
           end = r.find(b'END!')
           if end != -1:
             data = t + data + r[:end]
-            t = r[end+3:]
+            t = r[end+4:]
             break
           data += r
 
 
         if data is not None:
-          # print("data:", data[:50])
+          print("data:", data[:50])
           # iv = data[:24]
           # data = data[24:]
           x = data.find(b'==')
@@ -64,27 +64,12 @@ class Streamer (threading.Thread):
           cipher = AES.new(self.key, AES.MODE_CBC, b64decode(iv))
           data = unpad(cipher.decrypt(b64decode(data)), AES.block_size)
 
-          path = 'output/file' + str(self.i1) + '.mp4'
-          f = open(path, 'wb')
-          f.write(data)
-          print("file ", self.i1, " WRITTEN")
-          f.close()
+          nparr = np.fromstring(data, np.uint8)
+          frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+          ret, jpeg = cv2.imencode('.jpg', frame)
           
-          # vid = cv2.VideoCapture(path)
-          # success = 1
-          # # q=0
-          # while success: 
-          #   success, image = vid.read()
-          #   if image is not None:
-          #     ret, jpeg = cv2.imencode('.jpg', image)
-          #     # x = open("output/img"+str(q)+".jpg", 'wb')
-          #     # x.write(jpeg)
-          #     # x.close()
-          #     self.jpeg = jpeg
-          #     # q+=1
-
+          self.jpeg = jpeg
           self.connected = True
-          self.i1 += 1
         else:
           # conn.close()
           self.connected = False
@@ -103,25 +88,6 @@ class Streamer (threading.Thread):
   def get_jpeg(self):
     return self.jpeg.tobytes()
 
-  def get_video(self):
-    
-    # vid = cv2.VideoCapture(path)
-    # fps = vid.get(cv2.CAP_PROP_FPS)      # OpenCV2 version 2 used "CV_CAP_PROP_FPS"
-    # frameCount = int(vid.get(cv2.CAP_PROP_FRAME_COUNT))
-    # duration = frameCount/fps
-    # minutes = int(duration/60)
-
-    # self.video = data
-    # path = 'output/file' + str(self.i) + '.mp4'
-    # f = open(path, 'wb+')
-    # data = f.read()
-    # print("file ", self.i, " READ")
-    # f.close()
-
-    self.i+=1
-    # time.sleep(minutes)
-
-    return self.video
 
 
 
