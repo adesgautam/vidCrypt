@@ -7,7 +7,7 @@ from base64 import b64decode
 from Crypto.Cipher import DES, DES3, AES
 from Crypto.Util.Padding import unpad
 
-class Streamer (threading.Thread):
+class Streamer(threading.Thread):
 	def __init__(self, hostname, port):
 		threading.Thread.__init__(self)
 
@@ -23,7 +23,6 @@ class Streamer (threading.Thread):
 		self.isRunning = True
 
 		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		print('Socket created')
 
 		s.connect((socket.gethostbyname(self.hostname), self.port))
 		# s.connect((self.hostname, self.port))
