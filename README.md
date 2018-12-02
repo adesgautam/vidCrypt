@@ -3,11 +3,11 @@ This project aims to securely livestream webcam using AES-128 over network and a
 
 Currently the livestream is working but the video on demand needs work.
 
-![Running the client and server on the local machine](https://drive.google.com/open?id=1dEfF_6cpf_-7jTcPyKdn5WRKLvEtsnQM)
+![Running the client and server on the local machine](https://drive.google.com/uc?export=view&id=1dEfF_6cpf_-7jTcPyKdn5WRKLvEtsnQM)
 
-![Actual encrypted data transfer of the stream.](https://drive.google.com/open?id=145Zu_LapIj6DFEOEhiyei_ASFUrNIf4v)
+![Actual encrypted data transfer of the stream.](https://drive.google.com/uc?export=view&id=145Zu_LapIj6DFEOEhiyei_ASFUrNIf4v)
 
-![Live Streaming of the Webcam on a local machine. The live video stream and the video resolution is encrypted according to the network speed.](https://drive.google.com/open?id=1Xol_5yKqo-pETdkYpgtD7zKHIEfVX2oU)
+![Live Streaming of the Webcam on a local machine. The live video stream and the video resolution is encrypted according to the network speed.](https://drive.google.com/uc?export=view&id=1Xol_5yKqo-pETdkYpgtD7zKHIEfVX2oU)
 
 ## For running the project:
 Dependencies:
