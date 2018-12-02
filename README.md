@@ -1,8 +1,6 @@
 # vidCrypt
 This project aims to securely livestream webcam using AES-128 over network and also steam videos on demand over network.
 
-Currently the livestream is working but the video on demand needs work.
-
 ![Running the client and server on the local machine](https://drive.google.com/uc?export=view&id=1dEfF_6cpf_-7jTcPyKdn5WRKLvEtsnQM)
 
 ![Actual encrypted data transfer of the stream.](https://drive.google.com/uc?export=view&id=145Zu_LapIj6DFEOEhiyei_ASFUrNIf4v)
@@ -40,6 +38,8 @@ This will split the original video into chunks in the ```outputs``` folder. Thes
 For switching the network speed, change the "download" variable in the ```server.py``` file on line 20. And, for making it perform automatically change the "test" variable's value as True.
 
 This streaming is now working correctly. Only the first chunk gets played. 
+
+#### Note: Currently the livestream is working but the video on demand needs work.
 
 Please help to make it working. Raise issues and make pull requests.
 
